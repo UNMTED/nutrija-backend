@@ -21,6 +21,10 @@ export class Categoria {
   @ApiProperty()
   descricao: string;
 
+  @Column({ length: 5000 })
+  @ApiProperty()
+  foto: string;
+
   @ApiProperty()
   @OneToMany(() => Produto, (produto) => produto.categoria)
   produto: Produto[];
