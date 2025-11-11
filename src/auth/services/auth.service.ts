@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Bcrypt } from '../bcrypt/bcrypt';
@@ -43,6 +40,7 @@ export class AuthService {
       usuario: usuarioLogin.usuario,
       senha: '',
       foto: buscaUsuario?.foto,
+      role: buscaUsuario?.role,
       token: `Bearer ${this.jwtService.sign(payload)}`,
     };
   }
