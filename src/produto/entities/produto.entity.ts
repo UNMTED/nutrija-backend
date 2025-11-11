@@ -38,7 +38,7 @@ export class Produto {
 
   @ApiProperty({ type: () => Categoria })
   @ManyToOne(() => Categoria, (categoria) => categoria.produto, {
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   categoria: Categoria;
 
