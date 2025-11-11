@@ -35,6 +35,12 @@ export class ProdutoService {
 
     return produto;
   }
+  async findByCategoriaId(catId: number): Promise<Produto[]> {
+    return await this.produtoRepository.find({
+      where: { categoria: { id: catId } },
+      relations: { categoria: true },
+    });
+  }
 
   async findAllByNome(nome: string): Promise<Produto[]> {
     return await this.produtoRepository.find({
