@@ -20,7 +20,6 @@ export class Usuario {
   @ApiProperty()
   usuario: string;
 
-  @IsNotEmpty()
   @Column({ length: 255, nullable: false, default: 'user' })
   @ApiProperty()
   role: string;
